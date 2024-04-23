@@ -131,7 +131,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className='w-full max-w-[1400px] flex flex-col justify-start items-center'>
       <canvas
         ref={canvasRef}
         width={squareLength}
