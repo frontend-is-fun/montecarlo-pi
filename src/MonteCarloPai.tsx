@@ -3,6 +3,7 @@ import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { FormattedMessage } from 'react-intl';
 
+
 function MonteCarloPi() {
   const [totalSteps, setTotalSteps] = useState(1000);
   const [squareLength, setSquareLength] = useState(400);
