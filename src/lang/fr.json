@@ -1,6 +1,6 @@
 {
   "title": "Visualiser la méthode de Monte-Carlo pour calculer Pi",
-  "description": "Visualiser la méthode de Monte-Carlo pour calculer Pi",
+  "description": "Monte-Carlo est une ville de jeux située dans la principauté de Monaco en Europe, et son nom symbolise également la probabilité. \n  La méthode de Monte-Carlo, également connue sous le nom d'échantillonnage aléatoire ou de méthode d'essai statistique, est une méthode de calcul basée sur la théorie des probabilités et la statistique, utilisant essentiellement des nombres aléatoires (ou plus communément, des nombres pseudo-aléatoires) pour résoudre de nombreux problèmes de calcul. \n  Elle associe le problème à résoudre à un certain modèle de probabilité pour obtenir une solution approximative. \n  Lors du calcul de pi par la méthode de Monte-Carlo, un cercle est inscrit dans un carré, et le rapport entre l'aire du cercle et l'aire du carré est π/4. \n  À l'intérieur de ce carré, n points aléatoires (ces points suivent une distribution uniforme) sont générés, et leurs distances par rapport au point central sont calculées pour déterminer s'ils se trouvent à l'intérieur du rayon du cercle. \n  En comptant le nombre de points à l'intérieur du cercle et en prenant le rapport à n, multiplié par 4, on obtient la valeur de π. \n  Théoriquement, plus la valeur de n est grande, plus la valeur calculée de π est précise.",
   "total_steps": "Nombre total d'étapes",
   "current_step": "Étape actuelle",
   "side_length": "Longueur du côté du carré",

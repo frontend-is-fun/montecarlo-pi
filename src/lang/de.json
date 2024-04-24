@@ -1,6 +1,6 @@
 {
   "title": "Monte-Carlo-Methode zur Berechnung von Pi visualisieren",
-  "description": "Monte-Carlo-Methode zur Berechnung von Pi visualisieren",
+  "description": "Monte Carlo ist eine Glücksspielstadt im Fürstentum Monaco in Europa, und ihr Name symbolisiert auch die Wahrscheinlichkeit. \n Die Monte-Carlo-Methode, auch als Zufallsstichproben- oder statistische Versuchsmethode bekannt, ist ein auf der Wahrscheinlichkeitstheorie und der Statistik basierendes Berechnungsverfahren, das im Wesentlichen Zufallszahlen (oder häufiger Pseudozufallszahlen) verwendet, um viele Berechnungsprobleme zu lösen. \n Sie bringt das zu lösende Problem mit einem bestimmten Wahrscheinlichkeitsmodell in Verbindung, um eine Näherungslösung zu erhalten. \n Bei der Berechnung von Pi mit der Monte-Carlo-Methode wird ein Kreis in ein Quadrat eingeschrieben, wobei das Verhältnis der Kreisfläche zur Quadratfläche π/4 ist. \n Innerhalb dieses Quadrats werden n zufällige Punkte (diese Punkte folgen einer Gleichverteilung) erzeugt, und ihre Abstände vom Mittelpunkt werden berechnet, um zu bestimmen, ob sie sich innerhalb des Kreisradius befinden. \n Durch Zählen der Anzahl der Punkte innerhalb des Kreises und Bildung des Verhältnisses zu n, multipliziert mit 4, erhält man den Wert von π. \n Theoretisch gilt: Je größer der Wert von n, desto genauer ist der berechnete Wert von π.",
   "total_steps": "Gesamtschritte",
   "current_step": "Aktueller Schritt",
   "side_length": "Seitenlänge des Quadrats",

@@ -1,6 +1,6 @@
 {
   "title": "Visualize Monte Carlo Method for Calculating Pi",
-  "description": "Visualize Monte Carlo Method for Calculating Pi", 
+  "description": "Monte Carlo is a gambling town located in the Principality of Monaco in Europe, and its name also symbolizes probability. \n  The Monte Carlo method, also known as random sampling or statistical trial method, is a computational method based on probability and statistical theory, essentially using random numbers (or more commonly, pseudorandom numbers) to solve many computational problems. \n  It associates the problem to be solved with a certain probability model to obtain an approximate solution. \n  When calculating pi using the Monte Carlo method, a circle is inscribed within a square, and the ratio of the area of the circle to the area of the square is π/4. \n  Within this square, n random points (these points follow a uniform distribution) are generated, and their distances from the center point are calculated to determine whether they are within the radius of the circle. \n  By counting the number of points inside the circle and taking the ratio to n, multiplied by 4, the value of π is obtained. \n  Theoretically, the larger the value of n, the more accurate the calculated value of π.",
   "total_steps": "Total Steps",
   "current_step": "Current Step",
   "side_length": "Side Length of Square",

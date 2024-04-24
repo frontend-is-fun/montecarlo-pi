@@ -8,7 +8,7 @@ export interface ChartComponentProps {
 const ChartComponent = (props: ChartComponentProps) => {
   const { piHistory } = props;
   return (
-    <div className='col-span-1 chart-container'>
+    <div className='w-full chart-container'>
       <Line
         data={{
           labels: new Array(piHistory.length).fill('').map((_, index) => `#${piHistory.length - index}`),

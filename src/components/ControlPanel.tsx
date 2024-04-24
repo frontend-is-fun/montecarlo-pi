@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FormattedMessage } from 'react-intl';
 
 export interface ControlPanelProps {
@@ -28,7 +29,7 @@ const ControlPanel = (props: ControlPanelProps) => {
   } = props;
 
   return (
-    <div className='flex flex-col justify-start items-center w-[600px] mt-8 border shadow-xl rounded-md py-8 px-4 font-bold'>
+    <div className='flex flex-col items-center justify-start w-full px-4 py-8 mt-8 font-bold border rounded-md shadow-xl'>
       <div className='grid w-full grid-cols-2 gap-4'>
         {/* total steps */}
         <div className='flex flex-row items-center justify-start'>

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Line } from 'react-chartjs-2';
-import 'chart.js/auto';
 
+import ChartComponent from './components/Chart.tsx';
 import ControlPanel from './components/ControlPanel.tsx';
 
 function MonteCarloPi() {
@@ -17,7 +16,7 @@ function MonteCarloPi() {
   const handleReset = () => {
     setTotalSteps(1000);
     setCurrentStep(0);
-    setSquareLength(400);
+    setSquareLength(600);
     setIsCalculating(false);
     setPiEstimate(0);
     setIsPaused(false);
@@ -135,44 +134,30 @@ function MonteCarloPi() {
 
   return (
     <div className='w-full max-w-[1400px] flex flex-col justify-start items-center'>
-      <div className='grid w-full grid-cols-2 gap-4'>
+      <div className='grid w-full grid-cols-2 gap-4 p-4 border shadow-md'>
         <canvas
           ref={canvasRef}
           width={squareLength}
           height={squareLength}
           className='col-span-1'
         />
-        <div className='col-span-1 chart-container'>
-          <Line
-            data={{
-              labels: new Array(piHistory.length).fill('').map((_, index) => `#${piHistory.length - index}`),
-              datasets: [
-                {
-                  label: 'Pi Estimate',
-                  data: piHistory,
-                  fill: false,
-                  borderColor: 'rgb(75, 192, 192)',
-                  tension: 0.1,
-                },
-              ],
-            }}
+        <div className='flex flex-col items-start justify-start col-span-1'>
+          <ChartComponent piHistory={piHistory} />
+          <ControlPanel
+            reset={handleReset}
+            handleStartStop={handleStartStop}
+            piEstimate={piEstimate}
+            totalSteps={totalSteps}
+            currentStep={currentStep}
+            setTotalSteps={setTotalSteps}
+            squareLength={squareLength}
+            setSquareLength={setSquareLength}
+            isCalculating={isCalculating}
+            isPaused={isPaused}
           />
         </div>
-      </div>
 
-      <ControlPanel
-        reset={handleReset}
-        handleStartStop={handleStartStop}
-        piEstimate={piEstimate}
-        totalSteps={totalSteps}
-        currentStep={currentStep}
-        setTotalSteps={setTotalSteps}
-        squareLength={squareLength}
-        setSquareLength={setSquareLength}
-        isCalculating={isCalculating}
-        isPaused={isPaused}
-        // setIsCalculating={setIsCalculating}
-      />
+      </div>
 
     </div>
   );
