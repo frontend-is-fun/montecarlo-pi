@@ -1,7 +1,7 @@
-import {Language} from '../App';
+
 
 export interface LanguageSwitcherProps {
-  locale: Language;
+  locale: string;
   changeLanguage: (newLocale: string) => void;
 }
 
@@ -10,12 +10,12 @@ const LanguageSwitcher = (props: LanguageSwitcherProps) => {
   const { locale, changeLanguage } = props;
   return (
       <select
-        className="select select-bordered w-full max-w-xs"
+        className="w-full max-w-xs select select-bordered"
         value={locale}
         onChange={(e) => changeLanguage(e.target.value)}
       >
         <option value="en">English</option>
-        <option value="zh_CN">简体中文</option>
+        <option value="zh-CN">简体中文</option>
         {/* <option value="zh_TW">繁體中文</option>
         <option value="fr">Français</option>
         <option value="de">Deutsch</option>
