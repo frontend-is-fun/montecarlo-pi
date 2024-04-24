@@ -1,3 +1,11 @@
 {
-  "hello": "你真台湾好"
+  "title": "可視化蒙特卡羅統計法計算圓周率",
+  "description": "可視化蒙特卡羅統計法計算圓周率",
+  "total_steps": "總步數",
+  "current_step": "當前步數",
+  "side_length": "正方形邊長",
+  "start": "開始",
+  "pause": "暫停", 
+  "reset": "重置",
+  "result": "計算結果"
 }

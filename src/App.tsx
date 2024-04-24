@@ -1,6 +1,6 @@
 
 import 'chart.js/auto';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 
 // components
 import Header from './components/Header';
@@ -10,6 +10,11 @@ import { IntlProvider, FormattedMessage } from "react-intl";
 
 import enMessages from "./lang/en.json";
 import zhCNMessages from "./lang/zh-CN.json";
+import zhTWMessages from "./lang/zh-TW.json";
+import jpMessages from "./lang/jp.json";
+import deMessages from "./lang/de.json";
+import frMessages from "./lang/fr.json";
+import krMessages from "./lang/kr.json";
 
 function App() {
 
@@ -27,6 +32,16 @@ function App() {
         return enMessages;
       case 'zh-CN':
         return zhCNMessages;
+      case 'zh-TW':
+        return zhTWMessages;
+      case 'jp':
+        return jpMessages;
+      case 'de':
+        return deMessages;
+      case 'fr':
+        return frMessages;
+      case 'kr':
+        return krMessages;
       default:
         return enMessages;
     }
@@ -40,7 +55,6 @@ function App() {
           locale={locale}
           changeLanguage={updateLocale}
         />
-      <FormattedMessage id="hello" defaultMessage="Hello" />
       <MonteCarloPi />
       </div>
       </IntlProvider>

@@ -134,7 +134,6 @@ function MonteCarloPi() {
 
   return (
       <div className='w-full max-w-[1400px] flex flex-col justify-start items-center'>
-         {/* <FormattedMessage id="hello" defaultMessage="Hello" /> */}
 
       <canvas
         ref={canvasRef}
@@ -142,7 +141,7 @@ function MonteCarloPi() {
         height={squareLength}
       />
       <div>
-        <label htmlFor='totalStepsInput'>总步数: </label>
+        <label htmlFor='totalStepsInput'> <FormattedMessage id="total_steps" defaultMessage="Total Steps" />: </label>
         <input
           id='totalStepsInput'
           type='number'
@@ -152,10 +151,10 @@ function MonteCarloPi() {
         />
       </div>
       <div>
-        <label>当前步数: {currentStep}</label>
+        <label>  <FormattedMessage id="current_step" defaultMessage="Current Step" />: {currentStep}</label>
       </div>
       <div>
-        <label htmlFor='squareLengthInput'>正方形边长: </label>
+        <label htmlFor='squareLengthInput'>              <FormattedMessage id="side_length" defaultMessage="Side Length of Square" /> </label>
         <input
           id='squareLengthInput'
           type='number'
@@ -176,13 +175,14 @@ function MonteCarloPi() {
         type='button'
         onClick={handleStartStop}
       >
-        {isCalculating && !isPaused ? '暂停' : '开始'}
+        {isCalculating && !isPaused ?               <FormattedMessage id="pause" defaultMessage="Pause" /> :               <FormattedMessage id="start" defaultMessage="Start" />}
       </button>
       <button
         type='button'
         onClick={handleReset}
       >
-        重设
+              <FormattedMessage id="reset" defaultMessage="Reset" />
+
       </button>
       <div>
         估计的圆周率: {piEstimate}

@@ -1,3 +1,11 @@
 {
-  "hello": "你好"
+  "title": "可视化蒙特卡洛统计法计算圆周率",
+  "description": "可视化蒙特卡洛统计法计算圆周率",
+  "total_steps": "总步数",
+  "current_step": "当前步数", 
+  "side_length": "正方形边长",
+  "start": "开始",
+  "pause": "暂停",
+  "reset": "重置",
+  "result": "计算结果"
 }

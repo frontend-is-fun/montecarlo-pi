@@ -1,0 +1,11 @@
+{
+    "title": "モンテカルロ法で円周率を計算する可視化",
+    "description": "モンテカルロ法で円周率を計算する可視化",
+    "total_steps": "総ステップ数",
+    "current_step": "現在のステップ",
+    "side_length": "正方形の一辺の長さ",
+    "start": "開始",
+    "pause": "一時停止",
+    "reset": "リセット", 
+    "result": "計算結果"
+  }

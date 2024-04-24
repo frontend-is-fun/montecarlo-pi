@@ -1,0 +1,11 @@
+{
+  "title": "Visualiser la méthode de Monte-Carlo pour calculer Pi",
+  "description": "Visualiser la méthode de Monte-Carlo pour calculer Pi",
+  "total_steps": "Nombre total d'étapes",
+  "current_step": "Étape actuelle",
+  "side_length": "Longueur du côté du carré",
+  "start": "Démarrer",
+  "pause": "Pause",
+  "reset": "Réinitialiser",
+  "result": "Résultat"
+}

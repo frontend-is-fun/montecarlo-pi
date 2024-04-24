@@ -1,3 +1,11 @@
 {
-  "hello": "Hello"
+  "title": "Visualize Monte Carlo Method for Calculating Pi",
+  "description": "Visualize Monte Carlo Method for Calculating Pi", 
+  "total_steps": "Total Steps",
+  "current_step": "Current Step",
+  "side_length": "Side Length of Square",
+  "start": "Start",
+  "pause": "Pause",
+  "reset": "Reset",
+  "result": "Result"
 }

@@ -1,0 +1,11 @@
+{
+    "title": "몬테카를로 방법으로 원주율 계산 시각화",
+    "description": "몬테카를로 방법으로 원주율 계산 시각화",
+    "total_steps": "총 단계 수",
+    "current_step": "현재 단계",
+    "side_length": "정사각형 한 변의 길이",
+    "start": "시작",
+    "pause": "일시정지",
+    "reset": "초기화",
+    "result": "계산 결과"
+  }
