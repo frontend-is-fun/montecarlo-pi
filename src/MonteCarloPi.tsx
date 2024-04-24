@@ -1,12 +1,11 @@
-import  { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { FormattedMessage } from 'react-intl';
 
-
 function MonteCarloPi() {
   const [totalSteps, setTotalSteps] = useState(1000);
-  const [squareLength, setSquareLength] = useState(400);
+  const [squareLength, setSquareLength] = useState(600);
   const [isCalculating, setIsCalculating] = useState(false);
   const [piEstimate, setPiEstimate] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
@@ -115,6 +114,7 @@ function MonteCarloPi() {
     }
 
     // 在清除 interval 时停止运行
+    // eslint-disable-next-line consistent-return
     return () => {
       clearInterval(interval);
       setIsCalculating(false);
@@ -133,60 +133,124 @@ function MonteCarloPi() {
   };
 
   return (
-      <div className='w-full max-w-[1400px] flex flex-col justify-start items-center'>
-
-      <canvas
-        ref={canvasRef}
-        width={squareLength}
-        height={squareLength}
-      />
-      <div>
-        <label htmlFor='totalStepsInput'> <FormattedMessage id="total_steps" defaultMessage="Total Steps" />: </label>
-        <input
-          id='totalStepsInput'
-          type='number'
-          value={totalSteps}
-          onChange={(e) => setTotalSteps(Math.max(1, parseInt(e.target.value, 10)))}
-          disabled={isCalculating || isPaused}
+    <div className='w-full max-w-[1400px] flex flex-col justify-start items-center'>
+      <div className='grid w-full grid-cols-2 gap-4'>
+        <canvas
+          ref={canvasRef}
+          width={squareLength}
+          height={squareLength}
+          className='col-span-1'
         />
-      </div>
-      <div>
-        <label>  <FormattedMessage id="current_step" defaultMessage="Current Step" />: {currentStep}</label>
-      </div>
-      <div>
-        <label htmlFor='squareLengthInput'>              <FormattedMessage id="side_length" defaultMessage="Side Length of Square" /> </label>
-        <input
-          id='squareLengthInput'
-          type='number'
-          value={squareLength}
-          onChange={(e) => setSquareLength(parseInt(e.target.value, 10))}
-          disabled={isCalculating || isPaused}
-        />
+        <div className='col-span-1 chart-container'>
+          <Line
+            data={{
+              labels: new Array(piHistory.length).fill('').map((_, index) => `#${piHistory.length - index}`),
+              datasets: [
+                {
+                  label: 'Pi Estimate',
+                  data: piHistory,
+                  fill: false,
+                  borderColor: 'rgb(75, 192, 192)',
+                  tension: 0.1,
+                },
+              ],
+            }}
+          />
+        </div>
       </div>
 
-      <Line
-        data={{ labels: new Array(piHistory.length).fill('').map((_, index) => `#${piHistory.length - index}`), datasets: [{ label: 'Pi Estimate', data: piHistory, fill: false, borderColor: 'rgb(75, 192, 192)', tension: 0.1 }] }}
-        height={100}
-        width={300}
-        className='border border-gray-300 shadow-md'
-      />
+      <div className='flex flex-col justify-start items-center w-[600px] mt-8 border shadow-xl rounded-md py-8 px-4 font-bold'>
+        <div className='grid w-full grid-cols-2 gap-4'>
+          {/* total steps */}
+          <div className='flex flex-row items-center justify-start'>
+            <FormattedMessage
+              id='total_steps'
+              defaultMessage='Total Steps'
+            />
+            <input
+              id='totalStepsInput'
+              type='number'
+              value={totalSteps}
+              onChange={(e) => setTotalSteps(Math.max(1, parseInt(e.target.value, 10)))}
+              disabled={isCalculating || isPaused}
+              className='w-32 max-w-xs ml-4 input input-bordered'
+            />
+          </div>
+          {/* side length */}
+          <div className='flex flex-row items-center justify-start'>
+            <FormattedMessage
+              id='side_length'
+              defaultMessage='Side Length of Square'
+              aria-label='Side Length of Square'
+            />
+            <input
+              id='squareLengthInput'
+              type='number'
+              value={squareLength}
+              onChange={(e) => setSquareLength(parseInt(e.target.value, 10))}
+              disabled={isCalculating || isPaused}
+              className='w-32 max-w-xs ml-4 input input-bordered'
+            />
+          </div>
+          {/* current step */}
+          <div className='flex flex-row items-center justify-start'>
+            <FormattedMessage
+              id='current_step'
+              defaultMessage='Current Step'
+              aria-label='Current Step'
+            />
+            <span className='ml-4 font-black text-orange-500'>
+              {currentStep}
+            </span>
+          </div>
+          {/* result */}
+          <div>
+            <FormattedMessage
+              id='result'
+              defaultMessage='Result'
+              aria-label='Result'
+            />
+            <span className='ml-4 font-black text-green-700'>
+              {piEstimate}
+            </span>
+          </div>
+        </div>
 
-      <button
-        type='button'
-        onClick={handleStartStop}
-      >
-        {isCalculating && !isPaused ?               <FormattedMessage id="pause" defaultMessage="Pause" /> :               <FormattedMessage id="start" defaultMessage="Start" />}
-      </button>
-      <button
-        type='button'
-        onClick={handleReset}
-      >
-              <FormattedMessage id="reset" defaultMessage="Reset" />
+        <div className='flex flex-row items-center mt-4 justify-cente'>
 
-      </button>
-      <div>
-        估计的圆周率: {piEstimate}
+          <button
+            type='button'
+            onClick={handleStartStop}
+            className='btn btn-neutral'
+          >
+            {isCalculating && !isPaused ? (
+              <FormattedMessage
+                id='pause'
+                defaultMessage='Pause'
+              />
+            ) : (
+              <FormattedMessage
+                id='start'
+                defaultMessage='Start'
+              />
+            )}
+          </button>
+          <button
+            type='button'
+            onClick={handleReset}
+            aria-label='Reset'
+            className='ml-12 btn btn-info'
+          >
+            <FormattedMessage
+              id='reset'
+              defaultMessage='Reset'
+            />
+
+          </button>
+        </div>
+
       </div>
+
     </div>
   );
 }
