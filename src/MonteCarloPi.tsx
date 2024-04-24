@@ -13,6 +13,16 @@ function MonteCarloPi() {
   const [piHistory, setPiHistory] = useState<Array<number>>([]); // 新增 piHistory 状态
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+  const handleSetTotalSteps = (value: number) => {
+    if (value < 1) {
+      setTotalSteps(1);
+    } else if (value > 10000000) {
+      setTotalSteps(10000000);
+    } else {
+      setTotalSteps(value);
+    }
+  };
+
   const handleReset = () => {
     setTotalSteps(1000);
     setCurrentStep(0);
@@ -149,7 +159,7 @@ function MonteCarloPi() {
             piEstimate={piEstimate}
             totalSteps={totalSteps}
             currentStep={currentStep}
-            setTotalSteps={setTotalSteps}
+            setTotalSteps={handleSetTotalSteps}
             squareLength={squareLength}
             setSquareLength={setSquareLength}
             isCalculating={isCalculating}
