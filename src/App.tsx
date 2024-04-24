@@ -5,6 +5,7 @@ import { useState, useMemo } from 'react';
 import { IntlProvider } from 'react-intl';
 import Header from './components/Header.tsx';
 import MonteCarloPi from './MonteCarloPi.tsx';
+import Footer from './components/Footer.tsx';
 
 import enMessages from './lang/en.json';
 import zhCNMessages from './lang/zh-CN.json';
@@ -54,6 +55,7 @@ function App() {
           changeLanguage={updateLocale}
         />
         <MonteCarloPi />
+        <Footer />
       </div>
     </IntlProvider>
 
